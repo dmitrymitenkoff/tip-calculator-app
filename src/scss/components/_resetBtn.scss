@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+// https://moderncss.dev/css-button-styling-guide/
+button {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.962rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: $cyan;
+  color: $dark-cyan;
+  margin-top: 3.2rem;
+  padding: 0.25em 0.75em;
+  min-height: 4.8rem;
+  transition: 220ms all ease-in-out;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 1px solid currentcolor;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $selected-bg;
+  }
+
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 0.4rem $selected-bg;
+  }
+}

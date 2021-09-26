@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  font-family: $space-mono;
+  font-size: 1.6rem;
+  height: 100%;
+  background-color: $light-cyan;
+}
+
+.site {
+  display: grid;
+  place-content: center;
+}
+
+.logo {
+  margin: 5rem auto 4.086rem;
+  @include responsive(desktop) {
+    margin-bottom: 8.786rem;
+  }
+}
+
+.hidden {
+  display: none;
+}

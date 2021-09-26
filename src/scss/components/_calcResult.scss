@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.calculation {
+  background-color: $dark-cyan;
+  color: $white;
+  padding: 3.7rem 2.4rem 2.4rem;
+  border-radius: 1.5rem;
+
+  @include responsive(tablet) {
+    margin: 0 3.2rem 3.2rem;
+  }
+
+  @include responsive(desktop) {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    margin: 3.2rem 3.2rem 3.2rem;
+  }
+
+  &__tip,
+  &__total {
+    font-weight: 700;
+    line-height: 2.37rem;
+  }
+
+  &__per__person {
+    display: block;
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1.925rem;
+    color: $secondary-text;
+  }
+
+  output {
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 4.739rem;
+    letter-spacing: -0.067rem;
+    text-align: right;
+    color: $cyan;
+    margin-right: 2.2rem;
+
+    @include responsive(desktop) {
+      font-size: 4.8rem;
+      line-height: 7.109rem;
+      letter-spacing: -1px;
+    }
+  }
+}

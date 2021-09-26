@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.site {
+  width: 100vw;
+
+  @include responsive(desktop) {
+    width: 100%;
+    max-width: 144rem;
+    height: 100vh;
+  }
+}
+
+fieldset ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.radio {
+  display: grid;
+  grid-template-columns: min-content auto;
+}
+
+.calculation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 2rem;
+  column-gap: 5rem;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  grid-column: 1/3;
+  width: 100%;
+}

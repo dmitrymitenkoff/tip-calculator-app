@@ -1,0 +1,56 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+form {
+  background-color: $white;
+  border-radius: 2.5rem;
+  box-shadow: 0 3.2rem 4.3rem hsla(186, 38%, 50%, 0.201);
+  width: 90%;
+  margin: 0 auto;
+
+  @include responsive(tablet) {
+    width: 90%;
+    max-width: 60rem;
+  }
+
+  @include responsive(desktop) {
+    width: 100%;
+    max-width: 92rem;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: auto;
+    border-radius: 2.5rem;
+  }
+}
+
+input,
+button {
+  height: 4.8rem;
+  cursor: pointer;
+}
+
+fieldset {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  border: none;
+  margin-bottom: 3.2rem;
+
+  @include responsive(desktop) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+
+fieldset ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  font-weight: 700;
+  line-height: 2.37rem;
+  color: $dark-grayish-cyan;
+  margin-bottom: 1.6rem;
+}

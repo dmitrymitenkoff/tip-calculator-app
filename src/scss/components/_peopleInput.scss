@@ -1,0 +1,53 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.people {
+  padding: 0 3.2rem;
+  margin-bottom: 3.2rem;
+
+  @include responsive(desktop) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+
+.people label {
+  display: block;
+  font-weight: 700;
+  line-height: 2.37rem;
+  color: $dark-grayish-cyan;
+  margin-bottom: 0.6rem;
+}
+
+/* https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/ */
+.people input {
+  @include numericInputs;
+  background-image: url('/assets/icon-person.svg');
+  background-size: 1.3rem;
+  background-position: 1.926rem 50%;
+}
+
+.people input:focus::placeholder {
+  opacity: 0;
+}
+.people label:focus + .people input::placeholder {
+  opacity: 0;
+}
+
+/* https://css-tricks.com/almanac/selectors/p/placeholder/ */
+.people input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  @include placeholderStyles;
+}
+.people input::-moz-placeholder {
+  /* Firefox 19+ */
+  @include placeholderStyles;
+}
+.people input:-ms-input-placeholder {
+  /* IE 10+ */
+  @include placeholderStyles;
+}
+.people input:-moz-placeholder {
+  /* Firefox 18- */
+  @include placeholderStyles;
+}

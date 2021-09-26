@@ -1,0 +1,45 @@
+@use './variables' as *;
+
+@mixin numericInputs {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: 2.4rem;
+  font-size: max(2.4rem, 1rem);
+  line-height: 1;
+  text-align: right;
+  color: $dark-cyan;
+  opacity: 1;
+  padding: 0.25em 0.5em;
+  background-repeat: no-repeat;
+  background-position: 1.926rem 50%;
+  background-color: $input-bg-bill-amount;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  transition: 180ms box-shadow ease-in-out;
+}
+
+@mixin inputFocus {
+  border: 2px solid $input-border;
+  box-shadow: 0 0 0 1px $input-focus-shadow;
+  outline: 2px solid transparent;
+}
+
+@mixin placeholderStyles {
+  color: $dark-cyan;
+  opacity: 1;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 500px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  }
+}
