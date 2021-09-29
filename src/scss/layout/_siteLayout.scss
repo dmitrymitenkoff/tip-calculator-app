@@ -50,12 +50,6 @@ fieldset ul {
 }
 
 .calculation {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-rows: auto;
-  // row-gap: 2rem;
-  // column-gap: 5rem;
-
   @include responsive(tiny) {
     display: flex;
     flex-flow: row wrap;
