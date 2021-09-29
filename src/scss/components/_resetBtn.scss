@@ -26,7 +26,12 @@ button {
 
   &:focus {
     outline-style: solid;
-    outline-color: transparent;
+    outline-color: $light-cyan;
     box-shadow: 0 0 0 0.4rem $selected-bg;
+  }
+
+  &:disabled {
+    background-color: $disabled-button-bg;
+    cursor: not-allowed;
   }
 }

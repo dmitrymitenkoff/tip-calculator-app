@@ -15,4 +15,11 @@ $input-custom-text: hsl(180, 18%, 40%);
 $selected-bg: hsla(173, 61%, 77%, 1);
 $secondary-text: hsla(183, 15%, 56%, 1);
 
+$color-invalid: hsl(13, 70%, 61%);
+$color-valid: $cyan;
+
+$border-error: 3px solid $color-invalid;
+$border-success: 3px solid $color-valid;
+$disabled-button-bg: hsla(183, 78%, 24%, 1);
+
 $space-mono: 'Space Mono', 'Lucida Sans', 'Lucida Grande', sans-serif;

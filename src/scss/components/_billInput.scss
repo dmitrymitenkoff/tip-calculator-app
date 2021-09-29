@@ -3,55 +3,58 @@
 
 .bill-amount {
   padding: 3.2rem;
+  position: relative;
 
   @include responsive(desktop) {
     grid-column: 1/2;
     grid-row: 1/2;
     margin: 0;
   }
-}
 
-.bill-amount label {
-  display: block;
-  font-weight: 700;
-  line-height: 2.37rem;
-  color: $dark-grayish-cyan;
-  margin-bottom: 0.6rem;
-}
+  & label {
+    display: block;
+    font-weight: 700;
+    line-height: 2.37rem;
+    color: $dark-grayish-cyan;
+    margin-bottom: 0.6rem;
+  }
 
-/* https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/ */
-.bill-amount input {
-  @include numericInputs;
-  background-image: url('/assets/icon-dollar.svg');
-  background-size: 0.984rem 1.546rem;
-  background-position: 1.926rem 50%;
-}
+  /* https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/ */
+  & input {
+    @include numericInputs;
+    background-image: url('/assets/icon-dollar.svg');
+    background-size: 0.984rem 1.546rem;
+    background-position: 1.926rem 50%;
 
-.bill-amount input:focus {
-  @include inputFocus;
-}
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border: $border-error;
+    }
 
-.bill-amount input:focus::placeholder {
-  opacity: 0;
-}
-.bill-amount label:focus + .bill-amount input::placeholder {
-  opacity: 0;
-}
+    &:not(:focus):not(:placeholder-shown):valid {
+      border: $border-success;
+    }
 
-/* https://css-tricks.com/almanac/selectors/p/placeholder/ */
-.bill-amount input::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  @include placeholderStyles;
-}
-.bill-amount input::-moz-placeholder {
-  /* Firefox 19+ */
-  @include placeholderStyles;
-}
-.bill-amount input:-ms-input-placeholder {
-  /* IE 10+ */
-  @include placeholderStyles;
-}
-.bill-amount input:-moz-placeholder {
-  /* Firefox 18- */
-  @include placeholderStyles;
+    /* https://css-tricks.com/almanac/selectors/p/placeholder/ */
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      @include placeholderStyles;
+    }
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      @include placeholderStyles;
+    }
+    &:-ms-input-placeholder {
+      /* IE 10+ */
+      @include placeholderStyles;
+    }
+    &:-moz-placeholder {
+      /* Firefox 18- */
+      @include placeholderStyles;
+    }
+  }
+
+  & small {
+    top: 30%;
+    right: 3.2rem;
+  }
 }

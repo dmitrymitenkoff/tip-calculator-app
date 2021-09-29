@@ -54,3 +54,10 @@ legend {
   color: $dark-grayish-cyan;
   margin-bottom: 1.6rem;
 }
+
+.form-control small {
+  position: absolute;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: $color-invalid;
+}
