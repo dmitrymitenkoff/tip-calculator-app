@@ -95,3 +95,21 @@ import './app';
 //     peopleErrorMsg.classList.remove('hidden');
 //   }
 // });
+
+// customTipInput.addEventListener('focus', event => {
+//   if (event.target.validity.valid) {
+//     customTipInput.checked = true;
+//     customTipRadio.checked = true;
+//     allRadioButtons.forEach(btn => {
+//       btn.checked = false;
+//     });
+//   }
+// });
+
+// customTipInput.addEventListener('input', event => {
+//   if (event.target.validity.valid) {
+//     selectedTipAmount = parseFloat(customTipInput.value);
+//     calculate();
+//   }
+//   button.disabled = false;
+// });

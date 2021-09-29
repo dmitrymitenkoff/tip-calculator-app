@@ -5,7 +5,7 @@ const allRadioButtons = document.querySelectorAll("input[name='tip-amount']");
 const peopleInput = document.querySelector('#people');
 const personTip = document.querySelector('.tipPerPerson');
 const personTotal = document.querySelector('.personTotal');
-const form = document.querySelectorAll('form');
+const form = document.querySelector('form');
 const button = document.querySelector('button');
 
 // Values to calculate
@@ -64,7 +64,7 @@ function removeErrorStyles(...inputs) {
 function addPlaceholder(...fields) {
   fields.forEach(field => {
     field.value = '';
-    if (field === 'customTipInput') {
+    if (field.id === 'custom-radio-input') {
       field.setAttribute('placeholder', 'Custom');
     } else {
       field.setAttribute('placeholder', '0');
@@ -100,27 +100,35 @@ peopleInput.addEventListener('input', event => {
   button.disabled = false;
 });
 
-customTipInput.addEventListener('focus', event => {
-  if (event.target.validity.valid) {
-    customTipInput.checked = true;
-    customTipRadio.checked = true;
-    allRadioButtons.forEach(btn => {
-      btn.checked = false;
-    });
-  }
+customTipInput.addEventListener('focus', () => {
+  console.log(customTipInput.value);
+  customTipInput.checked = true;
+  customTipRadio.checked = true;
+  allRadioButtons.forEach(btn => {
+    btn.checked = false;
+  });
 });
 
-customTipInput.addEventListener('input', event => {
+customTipInput.addEventListener('change', event => {
   if (event.target.validity.valid) {
     selectedTipAmount = parseFloat(customTipInput.value);
+    showSuccess(event.target);
     calculate();
+  } else if (event.target.validity.patternMismatch) {
+    showError(event.target, 'Invalid number');
   }
   button.disabled = false;
 });
 
 allRadioButtons.forEach(radioButton => {
-  radioButton.addEventListener('input', event => {
-    if (customTipInput.value === '') {
+  radioButton.addEventListener('input', () => {
+    if (radioButton.checked === true) {
+      // customTipInput.setAttribute('placeholder', 'Custom');
+      customTipInput.value = null;
+      customTipInput.checked = false;
+      customTipRadio.checked = false;
+      customTipInput.setAttribute('placeholder', 'Custom');
+      removeErrorStyles(customTipInput);
       selectedTipAmount = parseInt(radioButton.value);
       calculate();
     }
@@ -128,11 +136,26 @@ allRadioButtons.forEach(radioButton => {
   });
 });
 
-button.addEventListener('click', () => {
-  removeErrorStyles(billInput, peopleInput);
+// allRadioButtons.forEach(radioButton => {
+//   radioButton.addEventListener('input', () => {
+//     if (customTipInput.value === '') {
+//       customTipInput.setAttribute('placeholder', 'Custom');
+//       customTipInput.checked = false;
+//       customTipRadio.checked = false;
+//       console.log(customTipInput.value);
+//       selectedTipAmount = parseInt(radioButton.value);
+//       calculate();
+//     }
+//     button.disabled = false;
+//   });
+// });
+
+button.addEventListener('click', event => {
+  event.preventDefault();
+  removeErrorStyles(billInput, customTipInput, peopleInput);
   addPlaceholder(billInput, customTipInput, peopleInput);
-  personTip.textContent = '$0';
-  personTotal.textContent = '$0';
   button.disabled = true;
+  form.submit();
   form.reset();
+  return false;
 });
