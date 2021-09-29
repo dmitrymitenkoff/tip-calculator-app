@@ -21,14 +21,6 @@
   &__total {
     font-weight: 700;
     line-height: 2.37rem;
-
-    @include responsive(tiny) {
-      font-size: 1.5rem;
-    }
-
-    @include responsive(medium) {
-      font-size: 1.7rem;
-    }
   }
 
   &__per__person {
@@ -41,19 +33,14 @@
 
   output {
     font-weight: 700;
-
     line-height: 4.739rem;
     letter-spacing: -0.067rem;
     text-align: right;
     color: $cyan;
     margin-right: 1.2rem;
 
-    @include responsive(tiny) {
+    @include responsive(iphoneSE) {
       font-size: 2rem;
-    }
-
-    @include responsive(medium) {
-      font-size: 3.2rem;
     }
 
     @include responsive(desktop) {

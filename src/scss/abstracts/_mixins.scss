@@ -26,46 +26,26 @@
   outline: 2px solid transparent;
 }
 
-@mixin placeholderStyles {
-  color: $dark-cyan;
-  opacity: 1;
-}
-
-@mixin responsive($breakpoint) {
-  @if $breakpoint == tiny {
-    @media (min-width: 260px) {
-      @content;
-    }
+@mixin tipPlaceholder {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $input-custom-text;
+    opacity: 1;
   }
-
-  @if $breakpoint == small {
-    @media (min-width: 300px) {
-      @content;
-    }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $input-custom-text;
+    opacity: 1;
   }
-
-  @if $breakpoint == medium {
-    @media (min-width: 360px) {
-      @content;
-    }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $input-custom-text;
+    opacity: 1;
   }
-
-  @if $breakpoint == big {
-    @media (min-width: 400px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tablet {
-    @media (min-width: 500px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == desktop {
-    @media (min-width: 1000px) {
-      @content;
-    }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $input-custom-text;
+    opacity: 1;
   }
 }
 
@@ -97,5 +77,37 @@
     /* Firefox 18- */
     color: $dark-cyan;
     opacity: 0.5;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == iphoneSE {
+    @media (min-width: 279px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == smartphone {
+    @media (min-width: 375px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == smartphoneMedium {
+    @media (min-width: 414px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media (min-width: 500px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop {
+    @media (min-width: 1000px) {
+      @content;
+    }
   }
 }
