@@ -18,6 +18,21 @@ body {
   }
 }
 
+form {
+  @include responsive(desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: auto;
+  }
+}
+
+fieldset {
+  @include responsive(desktop) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+
 fieldset ul {
   display: flex;
   flex-flow: row wrap;

@@ -100,8 +100,8 @@ peopleInput.addEventListener('input', event => {
   button.disabled = false;
 });
 
+// When in focus, customInput and its underlying radiobutton are checked
 customTipInput.addEventListener('focus', () => {
-  console.log(customTipInput.value);
   customTipInput.checked = true;
   customTipRadio.checked = true;
   allRadioButtons.forEach(btn => {
@@ -109,6 +109,7 @@ customTipInput.addEventListener('focus', () => {
   });
 });
 
+// If there's 'change' on the custom tip input field, the value is assigned to "selectedTipAmount"
 customTipInput.addEventListener('change', event => {
   if (event.target.validity.valid) {
     selectedTipAmount = parseFloat(customTipInput.value);
@@ -120,35 +121,21 @@ customTipInput.addEventListener('change', event => {
   button.disabled = false;
 });
 
+// If any of the radio buttons is selected, the custom tip input gets unchecked, its placeholder is displayed, and the selected radio button's value is assigned to "selectedTipAmount"
 allRadioButtons.forEach(radioButton => {
   radioButton.addEventListener('input', () => {
     if (radioButton.checked === true) {
-      // customTipInput.setAttribute('placeholder', 'Custom');
+      removeErrorStyles(customTipInput);
       customTipInput.value = null;
       customTipInput.checked = false;
       customTipRadio.checked = false;
       customTipInput.setAttribute('placeholder', 'Custom');
-      removeErrorStyles(customTipInput);
       selectedTipAmount = parseInt(radioButton.value);
       calculate();
     }
     button.disabled = false;
   });
 });
-
-// allRadioButtons.forEach(radioButton => {
-//   radioButton.addEventListener('input', () => {
-//     if (customTipInput.value === '') {
-//       customTipInput.setAttribute('placeholder', 'Custom');
-//       customTipInput.checked = false;
-//       customTipRadio.checked = false;
-//       console.log(customTipInput.value);
-//       selectedTipAmount = parseInt(radioButton.value);
-//       calculate();
-//     }
-//     button.disabled = false;
-//   });
-// });
 
 button.addEventListener('click', event => {
   event.preventDefault();

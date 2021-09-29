@@ -44,10 +44,33 @@
   }
 }
 
-// @mixin error {
-//   position: absolute;
-//   display: none;
-//   font-weight: bold;
-//   font-size: 1.2rem;
-//   color: $color-invalid;
-// }
+@mixin labelStyle {
+  display: block;
+  font-weight: 700;
+  line-height: 2.37rem;
+  color: $dark-grayish-cyan;
+  margin-bottom: 0.6rem;
+}
+
+/* https://css-tricks.com/almanac/selectors/p/placeholder/ */
+@mixin placeholders {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $dark-cyan;
+    opacity: 0.5;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $dark-cyan;
+  }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $dark-cyan;
+    opacity: 0.5;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $dark-cyan;
+    opacity: 0.5;
+  }
+}

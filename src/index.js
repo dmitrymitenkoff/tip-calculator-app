@@ -113,3 +113,17 @@ import './app';
 //   }
 //   button.disabled = false;
 // });
+
+// allRadioButtons.forEach(radioButton => {
+//   radioButton.addEventListener('input', () => {
+//     if (customTipInput.value === '') {
+//       customTipInput.setAttribute('placeholder', 'Custom');
+//       customTipInput.checked = false;
+//       customTipRadio.checked = false;
+//       console.log(customTipInput.value);
+//       selectedTipAmount = parseInt(radioButton.value);
+//       calculate();
+//     }
+//     button.disabled = false;
+//   });
+// });
