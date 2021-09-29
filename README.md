@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - Repository: [GitHub](https://github.com/dmitrymitenkoff/tip-calculator-app)
-- Live: [devfinder app](https://tip-calculator-app-zeta.vercel.app/)
+- Live: [Tip Calculator App](https://tip-calculator-app-zeta.vercel.app/)
 
 ## My process
 
