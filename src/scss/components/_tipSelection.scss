@@ -33,7 +33,7 @@
 // Step 2: Custom Unchecked Radio Styles
 .radio__control {
   display: block;
-  width: 15rem;
+  width: 14rem;
   height: 4.8rem;
   line-height: 4.8rem;
   background-color: $dark-cyan;
@@ -43,11 +43,11 @@
   text-align: center;
   cursor: pointer;
 
-  @include responsive(tablet) {
+  @include responsive(medium) {
     width: 12rem;
   }
 
-  @include responsive(desktop) {
+  @include responsive(tablet) {
     width: 12rem;
   }
 }
@@ -60,6 +60,10 @@
   outline: none;
   text-align: right;
   padding-right: 1.781rem;
+
+  @include responsive(tiny) {
+    text-align: center;
+  }
 
   &:focus::placeholder {
     color: transparent;
