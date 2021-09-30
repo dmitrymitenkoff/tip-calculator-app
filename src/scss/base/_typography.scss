@@ -8,6 +8,15 @@ body {
   background-color: $light-cyan;
 }
 
+h2 {
+  font-size: 1.6rem;
+  line-height: 2.37rem;
+
+  @include responsive(tablet) {
+    margin-top: 2rem;
+  }
+}
+
 .site {
   display: grid;
   place-content: center;

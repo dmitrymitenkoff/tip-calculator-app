@@ -21,6 +21,7 @@
 
   <body>
     <main class="site">
+      <h1 class="visually-hidden">Splitter Tip Calcalator</h1>
       <img class="logo" src="./assets/logo.svg" alt="Logo" />
       <form>
         <p class="bill-amount form-control">
@@ -117,16 +118,20 @@
         </p>
 
         <section class="calculation">
-          <p class="calculation__tip">
+          <h2 class="calculation__tip">
             Tip Amount
             <span class="calculation__per__person">/ per person</span>
-          </p>
+          </h2>
+          <!-- <p class="calculation__tip">
+            Tip Amount
+            <span class="calculation__per__person">/ per person</span>
+          </p> -->
           <output class="tipPerPerson"
             >$<span class="tip__calc">0.00</span>
           </output>
-          <p class="calculation__total">
+          <h2 class="calculation__total">
             Total <span class="calculation__per__person">/ per person</span>
-          </p>
+          </h2>
           <output class="personTotal"
             >$<span class="tip__total">0.00</span></output
           >
