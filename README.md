@@ -60,7 +60,7 @@ Users should be able to:
 - [You probably don’t need input type=“number”](https://css-tricks.com/you-probably-dont-need-input-typenumber/)
 - [What to Use Instead of Number Inputs](https://css-tricks.com/what-to-use-instead-of-number-inputs/)
 - [I Wanted To Type a Number](https://www.filamentgroup.com/lab/type-number.html)
-- [<input type="number">](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number)
+- [input type="number"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number)
 - [Finger-friendly numerical inputs with inputmode](https://css-tricks.com/finger-friendly-numerical-inputs-with-inputmode/)
 - [Everything You Ever Wanted to Know About inputmode](https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/)
 - [Custom CSS Styles for Form Inputs and Textareas](https://moderncss.dev/custom-css-styles-for-form-inputs-and-textareas/)
