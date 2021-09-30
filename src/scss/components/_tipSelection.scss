@@ -116,8 +116,12 @@
   width: 1px;
 }
 
+.custom {
+  position: relative;
+}
+
 .customSmall {
   position: absolute;
-  top: 61.6%;
-  right: 52.5%;
+  top: -20%;
+  right: 0;
 }
