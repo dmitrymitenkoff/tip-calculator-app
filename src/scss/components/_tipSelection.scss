@@ -106,8 +106,18 @@
   @include tipPlaceholder;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .customSmall {
   position: absolute;
-  top: 72.5%;
+  top: 61.6%;
   right: 52.5%;
 }
